@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class WalletDashboard extends StatelessWidget {
+
+class WalletScreen extends StatelessWidget {
   final List<Map<String, String>> transactions = [
     {"amount": "NGN 2,000.00", "type": "Debit card", "color": "green"},
     {"amount": "NGN 3,000.00", "type": "Transfer/Janet Jackson", "color": "red"},
@@ -14,13 +15,13 @@ class WalletDashboard extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Text(
+        title:const Text(
           "Wallets",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.add, color: Colors.black),
+            icon:const Icon(Icons.add, color: Colors.black),
             onPressed: () {},
           ),
         ],
@@ -33,13 +34,13 @@ class WalletDashboard extends StatelessWidget {
             // Wallet Card
             Container(
               decoration: BoxDecoration(
-                color: Colors.purple,
+                color: Colors.green[700],
                 borderRadius: BorderRadius.circular(12),
               ),
-              padding: EdgeInsets.all(20),
-              child: Column(
+              padding:const EdgeInsets.all(20),
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children:  [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -62,40 +63,52 @@ class WalletDashboard extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
+                    backgroundColor: Colors.green[700],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   onPressed: () {},
-                  child: Text("Add cash"),
+                  child: const Text("Add cash",
+                  style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        ),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
+                    backgroundColor: Colors.green[700],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   onPressed: () {},
-                  child: Text("Cash out"),
+                  child: const Text("Cash out",
+                  style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        ),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+           const SizedBox(height: 20),
             // Transactions
             Expanded(
-              child: Column(
+              child:  Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+                children:  [
+                  const Text(
                     "Transactions",
                     style: TextStyle(
                       fontSize: 18,
@@ -129,23 +142,6 @@ class WalletDashboard extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.wallet),
-            label: "Wallet",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.send),
-            label: "Send",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: "Recipients",
-          ),
-        ],
-        selectedItemColor: Colors.purple,
       ),
     );
   }

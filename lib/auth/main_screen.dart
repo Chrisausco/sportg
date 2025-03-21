@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sports_news_app/auth/user_home.dart';
+import 'package:sports_news_app/wallet/wallet_screen.dart';
 
 
 
@@ -60,21 +61,20 @@ class _MarqueeState extends State<Marquee> with SingleTickerProviderStateMixin {
 }
 
 
-class MyHomePage extends StatefulWidget {
+class MainScreen extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
+  final List<Widget> _screens = [
     HomeScreen(),
-    Center(child: Text("Home Page")),
-    Center(child: Text("FSP Page")),
-    Center(child: Text("Profit Page")),
-    Center(child: Text("Browser Page")),
-    Center(child: Text("Wallet Page")),
+    Sports(),
+    ProfitScreen(),
+    BrowserScreen(),
+    WalletScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -86,35 +86,45 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
+      body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.sync_alt),
-            label: 'FSP',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.trending_up),
-            label: 'Profit',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'Browser',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
-            label: 'Wallet',
-          ),
-        ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.orange, // Selected color
-        unselectedItemColor: Colors.grey, // Unselected color
         onTap: _onItemTapped,
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.grey,
+        type: BottomNavigationBarType.fixed,
+        items:const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.sports_football), label: 'Sports'),
+          BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'Profit'),
+          BottomNavigationBarItem(icon: Icon(Icons.web), label: 'Browser'),
+          BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet), label: 'Wallet'),
+        ],
       ),
     );
   }
 }
+
+// Placeholder Screens
+
+class Sports extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('Sports', style: TextStyle(fontSize: 24)));
+  }
+}
+
+class  ProfitScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('Profit Screen', style: TextStyle(fontSize: 24)));
+  }
+}
+
+class BrowserScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('Browser Screen', style: TextStyle(fontSize: 24)));
+  }
+}
+

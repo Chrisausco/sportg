@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class TopStoryPage extends StatelessWidget {
-  const TopStoryPage({super.key});
+class Sports extends StatelessWidget {
+  const Sports({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sports news', style: TextStyle(color: Colors.white, fontSize: 24,),),
+        title:const Text('Sports news', style: TextStyle(color: Colors.white, fontSize: 24,),),
         backgroundColor: Colors.orange,
         actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Icon(Icons.notifications, color: Colors.white),
           ),
         ],
@@ -21,7 +21,7 @@ class TopStoryPage extends StatelessWidget {
           // Top Categories Row
           Container(
             color: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 8),
+            padding:const EdgeInsets.symmetric(vertical: 8),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -38,7 +38,7 @@ class TopStoryPage extends StatelessWidget {
           // Main Content
           Expanded(
             child: ListView(
-              padding: EdgeInsets.all(10),
+              padding:const EdgeInsets.all(10),
               children: [
                 _buildHeadlineCard(
                   'Howard hits out at "stupid" Pulisic over \'Trump dance\'',

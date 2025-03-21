@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'navigation.dart';
+import 'main_screen.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
     print('$label clicked');
     // Navigate to different screens or perform actions
   }
+  static final routeName = 'home-screen';
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +104,7 @@ class HomeScreen extends StatelessWidget {
               mainAxisSpacing: 16.0,
               crossAxisSpacing: 16.0,
               children: [
-                _buildGridButton(context, 'Official website', Icons.language),
+                _buildGridButton2(context, 'Official website', Icons.language),
                 _buildGridButton(context, 'Open source code', Icons.code),
                 _buildGridButton(context, 'Customer service', Icons.support_agent),
                 _buildGridButton(context, 'Launchpool', Icons.description),
@@ -150,6 +151,20 @@ class HomeScreen extends StatelessWidget {
   Widget _buildGridButton(BuildContext context, String label, IconData icon) {
     return GestureDetector(
       onTap: () => handleButtonClick(label),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, size: 40, color: Colors.green),
+          SizedBox(height: 8),
+          Text(label, textAlign: TextAlign.center),
+        ],
+      ),
+    );
+  }
+
+    Widget _buildGridButton2(BuildContext context, String label, IconData icon) {
+    return GestureDetector(
+      onTap: () => Uri.parse(''),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

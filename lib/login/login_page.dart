@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:sports_news_app/login/password_reset.dart';
+import 'package:sports_news_app/login/registration_form.dart';
+
 
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/sports.jpg"), // Add your background image here
+            image: AssetImage("assets/images/sports.jpg"), // Add your background image here
             fit: BoxFit.cover,
           ),
         ),
@@ -19,7 +23,7 @@ class LoginScreen extends StatelessWidget {
                 // Profile Picture
                 CircleAvatar(
                   radius: 60,
-                  backgroundImage: AssetImage("assets/logo.jpg"), // Add your circular profile image here
+                  backgroundImage: AssetImage("assets/images/logo1.jpg"), // Add your circular profile image here
                 ),
                 const SizedBox(height: 20),
                 // Input Fields
@@ -58,7 +62,7 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-                    backgroundColor: Colors.black,
+                    backgroundColor: Colors.teal,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
@@ -71,6 +75,8 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
+                          // Navigator.pushNamed(context, 'ResetPasswordScreen');
+                          Navigator.of(context).pushNamed(ResetPasswordScreen.routeName);
                           // Forgot Password action
                         },
                         child: const Text(
@@ -82,7 +88,8 @@ class LoginScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           // Register action
-                        },
+                       Navigator.of(context).pushNamed(RegistrationForm.routeName);         
+                         },
                         child: const Text(
                           'Register',
                           style: TextStyle(color: Colors.blue),
