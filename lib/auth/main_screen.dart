@@ -96,8 +96,8 @@ class _MainScreenState extends State<MainScreen> {
         items:const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.sports_football), label: 'Sports'),
-          BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'Profit'),
-          BottomNavigationBarItem(icon: Icon(Icons.web), label: 'Browser'),
+          BottomNavigationBarItem(icon: Icon(Icons.video_call), label: 'Videos'),
+          BottomNavigationBarItem(icon: Icon(Icons.web), label: 'Livescores'),
           BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet), label: 'Wallet'),
         ],
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sports_news_app/auth/botton_navigation.dart';
 import 'package:sports_news_app/auth/main_screen.dart';
-import 'package:sports_news_app/live_scores/livescores.dart';
+import 'package:sports_news_app/live_scores/livescores_page.dart';
 import 'package:sports_news_app/login/call.dart';
 import 'package:sports_news_app/login/password_reset.dart';
 import 'package:sports_news_app/login/registration_form.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:LiveScoresScreen(),
+      home:LiveScoresPage(),
       routes: {
       //   // '/':(context) => HomeScreen(),
        RegistrationForm.routeName: (context) => const RegistrationForm(),

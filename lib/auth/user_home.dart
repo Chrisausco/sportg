@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                 _buildGridButton(context, 'Customer service', Icons.support_agent),
                 _buildGridButton(context, 'Launchpool', Icons.description),
                 _buildGridButton(context, 'VIP Animation', Icons.movie),
-                _buildGridButton(context, 'AST Plan', Icons.book),
+                _buildGridButton(context, 'AS E-Shopping', Icons.shopping_bag),
                 _buildGridButton(context, 'AST Public NFTs', Icons.picture_as_pdf),
                 _buildGridButton(context, 'AST Ranking', Icons.loyalty),
               ],
